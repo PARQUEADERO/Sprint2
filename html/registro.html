@@ -8,36 +8,38 @@
     <title>Registro de usuario</title>
 
     <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/validacionUsuario.js"></script>
+
 
   </head>
-  <body background=".././img/SAM_3370.jpg"> 
+  <body background=".././img/SAM_3370.jpg">
    <div class="container-fluid">
 		<section class="container">
-			<div class="container-page">				
+			<div class="container-page">
 				<div class="col-md-6">
 					<h3 class="dark-grey">Registro</h3>
-					<form name="frmRegistro" method="POST" action="../php/registro.php">	
+					<form name="frmRegistro" method="POST" action="../php/registro.php" >
 						<div class="form-group col-lg-12">
 							<label>Nombre completo</label>
 							<input type="text" name="nombre" class="form-control" id="nombre" value="" placeholder="Nombre completo" autofocus required>
 						</div>
-						
+
 						<div class="form-group col-lg-6">
 							<label>Teléfono</label>
 							<input type="text" name="telefono" class="form-control" id="telefono" value="" placeholder="Número telefónico" autofocus required>
 						</div>
-						
+
 						<div class="form-group col-lg-6">
 							<label>Identificación</label>
 							<input type="text" name="id" class="form-control" id="id" value="" placeholder="Número de identificación" autofocus required>
 						</div>
-										
+
 						<div class="form-group col-lg-6">
 							<label>Placa</label>
 							<input type="text" name="placa" class="form-control" id="placa" value="" placeholder="Placa" autofocus required>
 						</div>
-						
+
 						<div class="form-group col-lg-6">
 							<label for="sel1">Tipo de combustible</label>
 							<select class="form-control" id="sel1" name="combustible">
@@ -46,41 +48,61 @@
 							  <option value="gnv">GNV</option>
 							  <option value="acpm">ACPM</option>
 							</select>
-						</div>			
-						
+						</div>
+
 						<div class="form-group col-lg-6">
 							<label>Color</label>
 							<input type="text" name="color" class="form-control" id="color" value="" placeholder="Color del vehículo" autofocus required>
 						</div>
-						
-						<div class="form-group col-lg-6">
-							<label>Marca</label>
-							<input type="text" name="marca" class="form-control" id="marca" value="" placeholder="Marca del vehículo" autofocus required>
-						</div>	
 
-						<div class="form-group col-lg-6">
-							<label>Modelo</label>
-							<input type="text" name="modelo" class="form-control" id="modelo" value="" placeholder="Modelo del vehículo" autofocus required>
+            <div class="form-group col-lg-6">
+							<label for="sel1">Marca del vehículo</label>
+							<select class="form-control" id="sel1" name="marca">
+							  <option value="Mazda">Mazda</option>
+							  <option value="Ferrari">Ferrari</option>
+							  <option value="Chevrolet">Chevrolet</option>
+							  <option value="Kia">Kia</option>
+							</select>
+						</div>
+
+            <div class="form-group col-lg-6">
+							<label for="sel1">Modelo del vehículo</label>
+							<select class="form-control" id="sel1" name="modelo">
+							  <option value="2000">2000</option>
+							  <option value="2001">2001</option>
+							  <option value="2002">2002</option>
+							  <option value="2003">2003</option>
+							</select>
 						</div>
 						<div class="form-group col-lg-6" style="margin-top:24px">
-							<button type="submit" class="btn btn-primary" id="btnRegistrar">Registro</button>
-						</div>
+				<!--			<button type="button" class="btn btn-primary" id="btnRegistrar">Registro</button> -->
+              <input type="button" class="btn btn-primary" value="Registrar" onclick="validacion()" />
+            </div>
 					</form>
+
 				</div>
+
+
+
+
+
 
 				<div class="col-md-6">
 					<h3 class="dark-grey">Tenga en cuenta estas indicaciones antes de diligenciar el registro</h3>
 					<p>
-						La información aquí suministrada solo se utilizara para una mayor agilidad a la hora de ingresar al parqueadero.Evite 
+						La información aquí suministrada solo se utilizara para una mayor agilidad a la hora de ingresar al parqueadero.Evite
 						brindar información erronea.
 					</p>
-					
+
 				</div>
 			</div>
 		</section>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/validacionUsuario.js"></script>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+
   </body>
 </html>

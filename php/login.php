@@ -5,11 +5,11 @@
 		static function existe($usu,$pas){
 			$cnx=conexion::conectar();
 			$q = "select * from usuario where usr= '". $usu ."' and pwd ='". $pas . "'";
-			$r=mysqli_query($cnx,$q);			
+			$r=mysqli_query($cnx,$q);
 			if(mysqli_num_rows($r)==0){
-				 
-				 
-				 print '<!DOCTYPE html>
+
+
+		/*		 print '<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -25,7 +25,7 @@
 
   </head>
   <body >
-  
+
 	 <div class="modal-dialog">
 				<div class="loginmodal-container">
 					<h1 >Ingreso de cuenta</h1><br>
@@ -34,34 +34,35 @@
 					<input type="password" name="pwd" placeholder="Contraseña">
 					<input type="submit" name="btnLogin" class="login loginmodal-submit" value="Ingresar">
 				  </form>
-					
+
 				  <div class="login-help">
 			<!--		<center><a href="#">¿Olvidaste la contraseña?</a> </center> -->
 				  </div>
 				</div>
 			</div>
-		  
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
      src="js/bootstrap.min.js">
-	
+
 	</script>
 	<script>
 	alert("USUARIO O CONTRASEÑA INCORRECTA");
 	</script>
   </body>
-</html>';
-				
+</html>';*/
+echo '<script>window.location.href="../html/login.html";</script>';
+
+
 				}else{
 					include("../html/menu_admin.html");
-					
-					
+
 				}
 			mysqli_close($cnx);
 		}
 	}
 	$u=$_POST['usr'];
 	$p=$_POST['pwd'];
-	
+
 	frmEditarOK::existe($u,$p);
 	?>

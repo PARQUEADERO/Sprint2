@@ -13,6 +13,7 @@
 			if(mysqli_num_rows($r)==0){//verificación de la existencia de un registro de esta persona
         $message = " [{$file}] redireccion por no estar registrado	".PHP_EOL;//mensaje al log
         error_log($message);
+        echo "<script>alert('No está registrado se redigira al registro');</script>";
         echo '<script>window.location.href="../html/registro.html";</script>';//en caso de que no se envia a la pagina de registro
 
 
@@ -192,7 +193,7 @@
                 $message = " [{$file}] ya se encuentra registrado	".PHP_EOL;//mensaje al log
                 error_log($message);
                 echo "<script>alert('ya está registrado');</script>";
-                echo '<script>window.location.href="../html/registro.html";</script>';
+                echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
 
               }

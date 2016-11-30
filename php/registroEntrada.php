@@ -20,7 +20,10 @@
               $r=mysqli_query($cnx,$q);
 
               if (mysqli_num_rows($r)==0) {
-                $entrada=date("d") .date("m").date("Y");
+                $entrada=date("d") .'/'.date("m").'/'.date("Y");
+
+                $hour=date("H:i");
+
                 $split=split(““,$pas);
                 for($i=0; $i<count($split);$i++){
                 }
@@ -37,7 +40,7 @@
 
                                   if (mysqli_num_rows($r)==0) {
                                     echo "<script>alert('ocupados');</script>";
-                                    echo '<script>window.location.href="../html/registro.html";</script>';
+                                    echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
                                   }else {
                                     $q = "select * from lugar where disponible ='s' and entrada ='".$sitio."'";
@@ -48,7 +51,7 @@
                                               $numero=$actor['numero'];
                                               $place=$actor['entrada'];
                                               //inserta la entrada con la fecha el id la placa y el lugar
-                                              $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada) values ('$usu','$pas','$entrada','$zone','$numero','$place')";
+                                              $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada,hora) values ('$usu','$pas','$entrada','$zone','$numero','$place','$hour')";
                                               mysqli_query($cnx,$qwery);
                                               //cambia el estado de la zona en la que ya entro a no disponible la cual se identifica con "n"
                                               $qwery="update lugar set disponible ='n' where zona='".$zone."' and numero='".$numero."'";
@@ -59,14 +62,14 @@
                                             }
                                       }
                                       echo "<script>alert('Registrado en la zona ".$zone." en el lugar ".$numero."');</script>";
-                                      echo '<script>window.location.href="../html/registro.html";</script>';
+                                      echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
                                   }
 
 
                            }else {
                              echo "<script>alert('No se pueden registrar carros en este sitio');</script>";
-                             echo '<script>window.location.href="../html/registro.html";</script>';
+                             echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
                            }
 
@@ -79,7 +82,7 @@
 
                             if (mysqli_num_rows($r)==0) {
                               echo "<script>alert('ocupados');</script>";
-                              echo '<script>window.location.href="../html/registro.html";</script>';
+                              echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
 
                             }else {
@@ -91,7 +94,7 @@
                                         $numero=$actor['numero'];
                                         $place=$actor['entrada'];
                                         //inserta la entrada con la fecha el id la placa y el lugar
-                                        $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada) values ('$usu','$pas','$entrada','$zone','$numero','$place')";
+                                        $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada,hora) values ('$usu','$pas','$entrada','$zone','$numero','$place','$hour')";
                                         mysqli_query($cnx,$qwery);
                                         //cambia el estado de la zona en la que ya entro a no disponible la cual se identifica con "n"
                                         $qwery="update lugar set disponible ='n' where zona='".$zone."' and numero='".$numero."'";
@@ -102,14 +105,14 @@
                                       }
                                 }
                                 echo "<script>alert('Registrado en la zona ".$zone." en el lugar ".$numero."');</script>";
-                                echo '<script>window.location.href="../html/registro.html";</script>';
+                                echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
                             }
 
 
                           }else {
                             echo "<script>alert('No se pueden registrar motos en este sitio');</script>";
-                            echo '<script>window.location.href="../html/registro.html";</script>';
+                            echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
                           }
 
@@ -122,7 +125,7 @@
 
                             if (mysqli_num_rows($r)==0) {
                               echo "<script>alert('ocupados');</script>";
-                              echo '<script>window.location.href="../html/registro.html";</script>';
+                              echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
 
                             }else {
@@ -134,7 +137,7 @@
                                         $numero=$actor['numero'];
                                         $place=$actor['entrada'];
                                         //inserta la entrada con la fecha el id la placa y el lugar
-                                        $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada) values ('$usu','$pas','$entrada','$zone','$numero','$place')";
+                                        $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada,hora) values ('$usu','$pas','$entrada','$zone','$numero','$place','$hour')";
                                         mysqli_query($cnx,$qwery);
                                         //cambia el estado de la zona en la que ya entro a no disponible la cual se identifica con "n"
                                         $qwery="update lugar set disponible ='n' where zona='".$zone."' and numero='".$numero."'";
@@ -145,13 +148,13 @@
                                       }
                                 }
                                 echo "<script>alert('Registrado en la zona ".$zone." en el lugar ".$numero."');</script>";
-                                echo '<script>window.location.href="../html/registro.html";</script>';
+                                echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
                             }
 
                           }else {
                             echo "<script>alert('No se pueden registrar motos en este sitio');</script>";
-                            echo '<script>window.location.href="../html/registro.html";</script>';
+                            echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
                           }
 

@@ -26,62 +26,133 @@
                 }
                   if ($split[$i-1]==$aux) {
                     echo "<script>alert('posee pico y placa');</script>";
+                    echo '<script>window.location.href="../html/registro.html";</script>';
 
                   }else{
 
-                        if (strcmp ($sitio , "vegas" ) == 0) {
+                        if (strcmp ($sitio , "regional1" ) == 0) {
                            if (strcmp ($vehiculo, "moto" )== 0) {
-                                  $q = "select * from lugar where  disponible ='"s"' and zona ='".$sitio."'";
+                                  $q = "select * from lugar where  disponible ='s' and entrada ='".$sitio."'";
                                   $r=mysqli_query($cnx,$q);
 
                                   if (mysqli_num_rows($r)==0) {
                                     echo "<script>alert('ocupados');</script>";
+                                    echo '<script>window.location.href="../html/registro.html";</script>';
 
                                   }else {
-                                    $q = "select * from lugar where disponible ='"s"' and zona ='".$sitio."'";
+                                    $q = "select * from lugar where disponible ='s' and entrada ='".$sitio."'";
                                     $r=mysqli_query($cnx,$q);
                                     while ($actor = $r->fetch_assoc()) {
                                             if (strcmp ($actor['disponible'] , "s" ) == 0) {
                                               $zone=$actor['zona'];
                                               $numero=$actor['numero'];
-
-                                              $qwery="insert into entrada (id, placa, fecha,zona,numero) values ('$nombre','$telefono','$id','$placa','$combustible')";
+                                              $place=$actor['entrada'];
+                                              //inserta la entrada con la fecha el id la placa y el lugar
+                                              $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada) values ('$usu','$pas','$entrada','$zone','$numero','$place')";
                                               mysqli_query($cnx,$qwery);
+                                              //cambia el estado de la zona en la que ya entro a no disponible la cual se identifica con "n"
+                                              $qwery="update lugar set disponible ='n' where zona='".$zone."' and numero='".$numero."'";
+                                              mysqli_query($cnx,$qwery);
+
                                               mysqli_close($cnx);
                                               break;
                                             }
                                       }
                                       echo "<script>alert('Registrado en la zona ".$zone." en el lugar ".$numero."');</script>";
-
-
-
+                                      echo '<script>window.location.href="../html/registro.html";</script>';
 
                                   }
 
 
                            }else {
                              echo "<script>alert('No se pueden registrar carros en este sitio');</script>";
+                             echo '<script>window.location.href="../html/registro.html";</script>';
+
                            }
 
 
 
-                        }else if (strcmp ($sitio , "regional1" ) == 0) {
+                        }else if (strcmp ($sitio , "regional2" ) == 0) {
                           if (strcmp ($vehiculo, "carro" )== 0) {
+                            $q = "select * from lugar where  disponible ='s' and entrada ='".$sitio."'";
+                            $r=mysqli_query($cnx,$q);
 
+                            if (mysqli_num_rows($r)==0) {
+                              echo "<script>alert('ocupados');</script>";
+                              echo '<script>window.location.href="../html/registro.html";</script>';
+
+
+                            }else {
+                              $q = "select * from lugar where disponible ='s' and entrada ='".$sitio."'";
+                              $r=mysqli_query($cnx,$q);
+                              while ($actor = $r->fetch_assoc()) {
+                                      if (strcmp ($actor['disponible'] , "s" ) == 0) {
+                                        $zone=$actor['zona'];
+                                        $numero=$actor['numero'];
+                                        $place=$actor['entrada'];
+                                        //inserta la entrada con la fecha el id la placa y el lugar
+                                        $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada) values ('$usu','$pas','$entrada','$zone','$numero','$place')";
+                                        mysqli_query($cnx,$qwery);
+                                        //cambia el estado de la zona en la que ya entro a no disponible la cual se identifica con "n"
+                                        $qwery="update lugar set disponible ='n' where zona='".$zone."' and numero='".$numero."'";
+                                        mysqli_query($cnx,$qwery);
+
+                                        mysqli_close($cnx);
+                                        break;
+                                      }
+                                }
+                                echo "<script>alert('Registrado en la zona ".$zone." en el lugar ".$numero."');</script>";
+                                echo '<script>window.location.href="../html/registro.html";</script>';
+
+                            }
 
 
                           }else {
                             echo "<script>alert('No se pueden registrar motos en este sitio');</script>";
+                            echo '<script>window.location.href="../html/registro.html";</script>';
+
                           }
 
                         }else {
 
                           if (strcmp ($vehiculo, "carro" )== 0) {
 
+                            $q = "select * from lugar where  disponible ='s' and entrada ='".$sitio."'";
+                            $r=mysqli_query($cnx,$q);
 
+                            if (mysqli_num_rows($r)==0) {
+                              echo "<script>alert('ocupados');</script>";
+                              echo '<script>window.location.href="../html/registro.html";</script>';
+
+
+                            }else {
+                              $q = "select * from lugar where disponible ='s' and entrada ='".$sitio."'";
+                              $r=mysqli_query($cnx,$q);
+                              while ($actor = $r->fetch_assoc()) {
+                                      if (strcmp ($actor['disponible'] , "s" ) == 0) {
+                                        $zone=$actor['zona'];
+                                        $numero=$actor['numero'];
+                                        $place=$actor['entrada'];
+                                        //inserta la entrada con la fecha el id la placa y el lugar
+                                        $qwery="insert into entrada (id, placa, fecha,zona,numero,entrada) values ('$usu','$pas','$entrada','$zone','$numero','$place')";
+                                        mysqli_query($cnx,$qwery);
+                                        //cambia el estado de la zona en la que ya entro a no disponible la cual se identifica con "n"
+                                        $qwery="update lugar set disponible ='n' where zona='".$zone."' and numero='".$numero."'";
+                                        mysqli_query($cnx,$qwery);
+
+                                        mysqli_close($cnx);
+                                        break;
+                                      }
+                                }
+                                echo "<script>alert('Registrado en la zona ".$zone." en el lugar ".$numero."');</script>";
+                                echo '<script>window.location.href="../html/registro.html";</script>';
+
+                            }
 
                           }else {
                             echo "<script>alert('No se pueden registrar motos en este sitio');</script>";
+                            echo '<script>window.location.href="../html/registro.html";</script>';
+
                           }
 
 
@@ -96,7 +167,7 @@
 
               }else{
 
-                echo "<script>alert('ya  esta regsitrado');</script>";
+                echo "<script>alert('no  esta regsitrado');</script>";
                 echo '<script>window.location.href="../html/registroEntrada.html";</script>';
 
 

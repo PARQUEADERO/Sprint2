@@ -19,8 +19,8 @@
 				<div class="loginmodal-container">
 					<h1 >Ingreso de entrada</h1><br>
 				  <form name="registroEntrada" method="POST" action="../php/registroEntrada.php">
-					<input type="text" name="usr" placeholder="Identificación de la persona">
-					<input type="password" name="pwd" placeholder="Placa">
+					<input type="text" name="usr" id="usr" placeholder="Identificación de la persona">
+					<input type="password" name="pwd" id="pwd" placeholder="Placa">
           <label for="sel1"><center><font color="white">Entrada</font></center></label>
           <select class="form-control" id="sel1" name="sitio">
             <option value="vegas">vegas</option>
@@ -35,7 +35,8 @@
             <option value="moto">moto</option>
           </select>
           <br>
-					<input type="submit" name="btnLogin" class="login loginmodal-submit" value="Registrar entrada">
+          <input type="button" class="login loginmodal-submit" value="Registrar entrada" onclick="validacion()" />
+
 				  </form>
 
 				  <div class="login-help">
@@ -46,6 +47,8 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/validacionEntrada.js"></script>
+
     <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>

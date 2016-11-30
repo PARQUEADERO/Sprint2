@@ -19,9 +19,10 @@
 				<div class="loginmodal-container">
 					<h1 >Ingreso de cuenta</h1><br>
 				  <form name="frmLogin" method="POST" action="../php/login.php">
-					<input type="text" name="usr" placeholder="Usuario">
-					<input type="password" name="pwd" placeholder="Contraseña">
-					<input type="submit" name="btnLogin" class="login loginmodal-submit" value="Ingresar">
+					<input type="text" name="usr" id="usr" placeholder="Usuario">
+					<input type="password" name="pwd" id="pwd" placeholder="Contraseña">
+          <input type="button" class="login loginmodal-submit" value="Ingresar" onclick="validacion()" />
+
 				  </form>
 
 				  <div class="login-help">
@@ -30,6 +31,7 @@
 				</div>
 			</div>
 
+      <script src="../js/validacionLogin.js"></script>
 
     <script src="../js/bootstrap.min.js"></script>
   </body>
